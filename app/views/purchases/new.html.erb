@@ -1,0 +1,11 @@
+<h2><%= t :title_send_report %></h2>
+
+
+<%= form_tag(import_purchases_path, multipart: true) do %>
+  <div class="form-group">
+    <%= label_tag t :tsv_report %>
+    <%= file_field_tag :tsv_report, class: "form-control", required: true %>
+  </div>
+
+  <%= submit_tag t(:send_button), class: "btn btn-primary" %>
+<% end %>

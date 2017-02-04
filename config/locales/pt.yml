@@ -1,0 +1,17 @@
+pt:
+  store: Loja
+  purchases: Compras
+  purchases_list: Lista de compras
+  title_send_report: Enviar um novo relatório de compras
+  tsv_report: "Selecione o arquivo:"
+  send_button: Enviar
+  data_successfully_imported: Dados importados com sucesso
+  list:
+    buyer: Comprador
+    address: Endereço
+    description: Descrição
+    item_price: Preço Unitário
+    quantity: Quantidade
+    supplier: Fornecedor
+  amount: "Receita bruta total:"
+  sent_new_file: "Enviar um novo arquivo"

@@ -1,0 +1,41 @@
+<h3><%= t :purchases_list %></h3>
+
+<% if flash[:notice] %>
+  <div class="alert alert-success" role="alert">
+    <%= flash[:notice] %>
+  </div>
+<% end %>
+
+<table class="table table-bordered table-hover">
+  <thead>
+  <tr>
+    <th>#</th>
+    <th><%= t "list.buyer" %></th>
+    <th><%= t "list.address" %></th>
+    <th><%= t "list.description" %></th>
+    <th><%= t "list.item_price" %></th>
+    <th><%= t "list.quantity" %></th>
+    <th><%= t "list.supplier" %></th>
+  </tr>
+  </thead>
+  <tbody>
+    <% @purchases.each_with_index do |purchase, index| %>
+      <tr>
+        <th scope="row"><%= index + 1 %></th>
+        <th><%= purchase.buyer.name %></th>
+        <th><%= purchase.buyer.address.street %></th>
+        <th><%= purchase.description%></th>
+        <th><%= purchase.item_price %></th>
+        <th><%= purchase.quantity %></th>
+        <th><%= purchase.product.supplier.name %></th>
+      </tr>
+    <%end%>
+    <tr class="table-info">
+      <th colspan="2"><%= t :amount %></th>
+      <th colspan="5"><%= @amount %></th>
+    </tr>
+  </tbody>
+</table>
+
+
+<%= link_to t(:sent_new_file), new_purchase_path, class: "btn btn-primary" %>

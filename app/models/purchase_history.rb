@@ -34,19 +34,28 @@ class PurchaseHistory < ActiveRecord::Base
   private
 
   def self.create_purchase(report_row)
+    buyer = report_row["Comprador"]
+    description = report_row["descrição"]
+    item_price = report_row["Preço Uniário"]
+    quantity = report_row["Quantidade"]
+    address = report_row["Endereço"]
+    supplier = report_row["Fornecedor"]
+    
+    populate_object(buyer, description, item_price, quantity, address, supplier)
+  end
+
+  def self.populate_object(buyer_name, description, item_price, quantity, address, supplier)
     purchase = PurchaseHistory.new
-    purchase.quantity = report_row["Quantidade"]
+    purchase.quantity = quantity
 
-    buyer = Buyer.find_or_initialize_by(name: report_row["Comprador"])
-    address = Address.find_or_initialize_by(street: report_row["Endereço"])
-    buyer.address = address
+    buyer = Buyer.find_or_initialize_by(name: buyer_name)
+    buyer.address = Address.find_or_initialize_by(street: address)
 
-    product = Product.find_or_initialize_by(description: report_row["descrição"]) do |product|
-      product.item_price = report_row["Preço Uniário"]
+    product = Product.find_or_initialize_by(description: description) do |product|
+      product.item_price = item_price
     end
 
-    supplier = Supplier.find_or_initialize_by(name: report_row["Fornecedor"])
-    product.supplier = supplier
+    product.supplier = Supplier.find_or_initialize_by(name: supplier)
 
     purchase.buyer = buyer
     purchase.product = product
@@ -54,5 +63,5 @@ class PurchaseHistory < ActiveRecord::Base
     purchase.item_price = product.item_price
 
     purchase
-  end
+  end 
 end

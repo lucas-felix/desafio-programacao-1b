@@ -57,4 +57,4 @@ $ rake db:migrate
 $ rails s
 ```
 
-Por fim, acesse http://localhost:3000 para utilizar a aplicação.
+Por fim, acesse <a href="http://localhost:3000" target="_blank">http://localhost:3000</a> para utilizar a aplicação.

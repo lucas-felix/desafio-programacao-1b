@@ -1,9 +1,0 @@
-one:
-  description: Notebook Dell
-  item_price: 2999.99
-  supplier_id: 1
-
-two:
-  description: Praticamente Inofensiva
-  item_price: 20
-  supplier_id: 2

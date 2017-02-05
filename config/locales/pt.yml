@@ -3,7 +3,7 @@ pt:
   purchases: Compras
   purchases_list: Lista de compras
   title_send_report: Enviar um novo relatório de compras
-  tsv_report: "Selecione o arquivo:"
+  purchases_file: "Selecione o arquivo:"
   send_button: Enviar
   data_successfully_imported: Dados importados com sucesso
   list:

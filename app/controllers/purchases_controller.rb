@@ -3,9 +3,10 @@ class PurchasesController < ApplicationController
   end
 
   def import
-    imported_quantity = PurchaseHistory.import params[:tsv_report]
+    imported_quantity = PurchaseHistory.import params[:purchases_file]
 
     flash[:notice] = t(:data_successfully_imported)
+
     redirect_to action: :recent, quantity: imported_quantity
   end
 

@@ -4,6 +4,6 @@ Rails.application.routes.draw do
   resources :purchases do
     collection { post :import }
   end
-  get 'purchases/recent/:quantity' => 'purchases#recent'
+  get 'purchases/recent/:quantity' => 'purchases#recent', as: 'recent'
 
 end

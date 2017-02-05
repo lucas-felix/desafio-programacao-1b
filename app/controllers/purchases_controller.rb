@@ -12,6 +12,6 @@ class PurchasesController < ApplicationController
 
   def recent
     @purchases = PurchaseHistory.recent(params[:quantity])
-    @amount = @purchases.map{ |purchase| purchase.quantity * purchase.item_price }.inject(:+)
+    @amount = PurchaseHistory.total_price_of_lasts(params[:quantity])
   end
 end

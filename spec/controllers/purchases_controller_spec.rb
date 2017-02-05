@@ -36,6 +36,14 @@ RSpec.describe PurchasesController, :type => :controller do
       expect(response).to render_template("recent")
     end
 
-    
+    it "assign @purchases" do
+      purchases = PurchaseHistory.recent(4)
+      expect(assigns(:purchases)).to eq(purchases)
+    end
+
+    it "assign @amount" do
+      amount = PurchaseHistory.total_price_of_lasts(4)
+      expect(assigns(:amount)).to eq(amount)
+    end
   end
 end

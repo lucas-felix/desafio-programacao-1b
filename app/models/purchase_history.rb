@@ -17,6 +17,11 @@ class PurchaseHistory < ActiveRecord::Base
     all.only(:order).from(all.reverse_order.limit(n), table_name)
   end
 
+  def self.total_price_of_lasts(quantity)
+    recent(quantity)
+      .map{ |purchase| purchase.quantity * purchase.item_price }.inject(:+)
+  end
+
   def self.import(report_file)
     purchases_file_content = report_file.read.force_encoding("UTF-8")
 

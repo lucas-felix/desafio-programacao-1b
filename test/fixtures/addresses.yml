@@ -1,7 +1,5 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
 one:
-  street: MyString
+  street: Rua Até mais e obrigado pelos peixes
 
 two:
-  street: MyString
+  street: Avenida Bob Dylan

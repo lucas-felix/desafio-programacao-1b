@@ -14,4 +14,4 @@ pt:
     quantity: Quantidade
     supplier: Fornecedor
   amount: "Receita bruta total:"
-  sent_new_file: "Enviar um novo arquivo"
+  sent_new_file: Enviar um novo arquivo

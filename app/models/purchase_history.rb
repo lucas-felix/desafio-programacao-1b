@@ -17,34 +17,42 @@ class PurchaseHistory < ActiveRecord::Base
     all.only(:order).from(all.reverse_order.limit(n), table_name)
   end
 
-  def self.import report_file
+  def self.import(report_file)
     purchases_file_content = report_file.read.force_encoding("UTF-8")
 
     csv = CSV.parse(purchases_file_content, col_sep: "\t", headers: true, converters: :numeric)
 
-    csv.each do |report_row|
-      purchase = PurchaseHistory.new
-      purchase.quantity = report_row["Quantidade"]
+      csv.each do |report_row|
+        purchase = create_purchase(report_row)
 
-      buyer = Buyer.find_or_initialize_by(name: report_row["Comprador"])
-      address = Address.find_or_initialize_by(street: report_row["Endereço"])
-      buyer.address = address
-
-      product = Product.find_or_initialize_by(description: report_row["descrição"]) do |product|
-        product.item_price = report_row["Preço Uniário"]
+        purchase.save
       end
 
-      supplier = Supplier.find_or_initialize_by(name: report_row["Fornecedor"])
-      product.supplier = supplier
+    csv.size
+  end
 
-      purchase.buyer = buyer
-      purchase.product = product
-      purchase.description = product.description
-      purchase.item_price = product.item_price
+  private
 
-      purchase.save
+  def self.create_purchase(report_row)
+    purchase = PurchaseHistory.new
+    purchase.quantity = report_row["Quantidade"]
+
+    buyer = Buyer.find_or_initialize_by(name: report_row["Comprador"])
+    address = Address.find_or_initialize_by(street: report_row["Endereço"])
+    buyer.address = address
+
+    product = Product.find_or_initialize_by(description: report_row["descrição"]) do |product|
+      product.item_price = report_row["Preço Uniário"]
     end
 
-    csv.size
+    supplier = Supplier.find_or_initialize_by(name: report_row["Fornecedor"])
+    product.supplier = supplier
+
+    purchase.buyer = buyer
+    purchase.product = product
+    purchase.description = product.description
+    purchase.item_price = product.item_price
+
+    purchase
   end
 end

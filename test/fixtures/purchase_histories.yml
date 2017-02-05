@@ -1,15 +1,13 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
 one:
-  quantity: 1
-  description: MyText
-  item_price: 9.99
-  buyer: 
-  product: 
+  quantity: 2
+  description: Notebook Dell
+  item_price: 2999.99
+  buyer_id: 1
+  product_id: 1
 
 two:
-  quantity: 1
-  description: MyText
-  item_price: 9.99
-  buyer: 
-  product: 
+  quantity: 3
+  description: Praticamente Inofensiva
+  item_price: 20
+  buyer_id: 2
+  product_id: 2

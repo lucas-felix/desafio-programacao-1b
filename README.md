@@ -5,7 +5,7 @@ via upload, e salva os dados em um banco de dados.
 
 Os dados são normalizados, e inseridos em suas devidas tabelas no banco de dados.
 
-## Executando a aplicação
+## Preparando o ambiente
 
 As seguints tecnologias são utilizadas:
 
@@ -41,6 +41,8 @@ deve ser a versão do SQLite:
 $ sqlite3 --version
 ```
 
+## Executando a aplicação
+
 Acesse o diretório do projeto:
 
 ```bash
@@ -55,4 +57,4 @@ $ rake db:migrate
 $ rails s
 ```
 
-Em seguida acesse http://localhost:3000
+Por fim, acesse http://localhost:3000 para utilizar a aplicação.

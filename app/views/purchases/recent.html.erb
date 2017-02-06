@@ -25,14 +25,14 @@
         <th><%= purchase.buyer.name %></th>
         <th><%= purchase.buyer.address.street %></th>
         <th><%= purchase.description%></th>
-        <th><%= purchase.item_price %></th>
+        <th><%= number_to_currency(purchase.item_price, unit: "R$", separator: ",") %></th>
         <th><%= purchase.quantity %></th>
         <th><%= purchase.product.supplier.name %></th>
       </tr>
     <%end%>
     <tr class="table-info">
       <th colspan="2"><%= t :amount %></th>
-      <th colspan="5"><%= @amount %></th>
+      <th colspan="5"><%= number_to_currency(@amount, unit: "R$", separator: ",") %></th>
     </tr>
   </tbody>
 </table>

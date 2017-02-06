@@ -1,16 +1,14 @@
 <h2><%= t :title_send_report %></h2>
 
 <div class="alert alert-info" role="alert">
-  <strong>Olá!</strong> Aqui você pode enviar um relatório de compras. Deve
-  apenas atentar que:
+  <strong><%= t "info.hello" %></strong> <%= t "info.description" %>
 
   <ul>
-    <li>Ele deve estar no formato de texto plano (.txt)</li>
-    <li>Cada campo deve estar separado por um "tab", e o arquivo deve seguir uma
-      estrutura pré-definida
-      <li>Você pode ver um arquivo de exemplo
-        <a href="https://github.com/myfreecomm/desafio-programacao-1b/blob/master/dados.txt"
-        target="_blank">aqui</a></li>
+    <li><%= t "info.plain_text" %></li>
+    <li><%= t "info.structure" %></li>
+      <li><%= t "info.example_file" %>
+        <a href="https://github.com/myfreecomm/desafio-programacao-1b/blob/master/dados.txt" target="_blank">
+        <%= t "info.here" %></a></li>
   </ul>
 </div>
 

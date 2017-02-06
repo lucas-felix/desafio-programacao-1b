@@ -6,6 +6,14 @@ pt:
   purchases_file: "Selecione o arquivo:"
   send_button: Enviar
   data_successfully_imported: Dados importados com sucesso
+  info:
+    hello: Olá!
+    description: "Aqui você pode enviar um relatório de compras. Deve apenas atentar que:"
+    plain_text: Ele deve estar no formato de texto plano (.txt)
+    structure: Cada campo deve estar separado por um "tab", e o arquivo deve seguir uma
+      estrutura pré-definida
+    example_file: Você pode ver um arquivo de exemplo
+    here: aqui
   list:
     buyer: Comprador
     address: Endereço

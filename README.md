@@ -16,7 +16,7 @@ As seguints tecnologias são utilizadas:
 Recomenda-se utilizar o RVM para instalar o ruby: https://rvm.io/rvm/install
 
 ```bash
-$ rvm install 2.3.3 
+$ rvm install 2.3.3
 $ rvm use 2.3.3
 $ ruby -v
 ruby 2.3.3p222 (2016-11-21 revision 56859) [x86_64-linux]
@@ -58,3 +58,9 @@ $ rails s
 ```
 
 Por fim, acesse <a href="http://localhost:3000" target="_blank">http://localhost:3000</a> para utilizar a aplicação.
+
+Para executar os testes:
+
+```bash
+$ rspec
+```

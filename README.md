@@ -3,7 +3,7 @@
 Programa que recebe um arquivo `.txt` no formato <a href="https://en.wikipedia.org/wiki/Tab-separated_values" target="_blank">TSV (Tab-separated values)</a>,
 via upload, e salva os dados em um banco de dados.
 
-Os dados são normalizados, e inseridos em suas devidas tabelas no banco de dados:
+Os dados são normalizados e inseridos em suas devidas tabelas no banco de dados:
 
 https://youtu.be/cHPfqXAZxBQ
 
